@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:rain/components/bar_chart.dart';
+import 'package:rain/pages/crop_rotation.dart';
+import 'package:rain/pages/npk.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:rain/pages/image_classificaton.dart';
 
 class SecondTile extends StatelessWidget {
   const SecondTile({super.key});
@@ -109,6 +112,13 @@ class SecondTile extends StatelessWidget {
                         left: 7,
                       ),
                       child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      PlantDiseaseDetector()));
+                        },
                         child: Container(
                           decoration: BoxDecoration(
                             border: Border.all(width: 3),
@@ -164,6 +174,12 @@ class SecondTile extends StatelessWidget {
                         bottom: 12,
                       ),
                       child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => cropROTATE()));
+                        },
                         child: Container(
                           decoration: BoxDecoration(
                             border: Border.all(width: 3),
@@ -232,6 +248,12 @@ class SecondTile extends StatelessWidget {
                 height: 140,
                 width: 355,
                 child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => NpkPage()),
+                    );
+                  },
                   child: Image.asset(
                     'lib/assets/images/Group 116.png',
                     fit: BoxFit.fill,

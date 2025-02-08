@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rain/components/first_tile.dart';
-import 'package:rain/components/sideMenu.dart';
-import 'package:rain/components/second_tile.dart';
-import 'package:rain/components/third_tile.dart';
-import 'package:rain/pages/chatbot.dart';
+
+//import 'package:rain/pages/chatbot.dart';
 
 class Name extends StatelessWidget {
   const Name({super.key});
@@ -26,7 +23,7 @@ class MyHomePage extends StatelessWidget {
         ),
         backgroundColor: const Color.fromRGBO(59, 180, 118, 1),
       ),
-      drawer: sideMenu(),
+      //drawer: sideMenu(),
       body: Container(
         color: const Color.fromRGBO(243, 233, 233, 1),
         child: ListView(
@@ -34,9 +31,9 @@ class MyHomePage extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                FirstTile(),
-                SecondTile(),
-                thirdTile(),
+                //FirstTile(),
+                //SecondTile(),
+                //thirdTile(),
               ],
             ),
           ],
@@ -45,10 +42,10 @@ class MyHomePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Navigate to chatbot or trigger chatbot function
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => ChatBOT()),
-          );
+          //Navigator.push(
+          //context,
+          //MaterialPageRoute(builder: (context) => ChatBOT()),
+          //);
         },
         backgroundColor: const Color.fromRGBO(
             59, 180, 118, 1), // Match AppBar color for consistency
