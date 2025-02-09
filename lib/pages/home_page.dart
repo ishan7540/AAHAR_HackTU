@@ -1,7 +1,6 @@
 import 'package:rain/pages/cart_page.dart';
 import 'package:rain/pages/explore_page.dart';
 import 'package:rain/pages/profile_page.dart';
-import 'package:rain/pages/services_page.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -15,33 +14,43 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final pages = [
-    const ExplorePage(),
-    const ServicesPage(),
-    const CartPage(),
-    const ProfilePage()
+    const ExplorePage(), // Home
+    const CartPage(), // Cart
+    const ProfilePage() // Profile
   ];
-  int currentPageIndex = 0;
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  int currentPageIndex = 1; // Default to Cart page
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
-      drawer: const Drawer(),
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(59, 180, 118, 1),
+        backgroundColor: Colors.green[700],
         centerTitle: false,
         leading: IconButton(
           onPressed: () {
-            _scaffoldKey.currentState?.openDrawer();
+            if (Navigator.canPop(context)) {
+              Navigator.pop(context);
+            }
           },
-          icon: const Icon(Icons.menu, color: Colors.white),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
         ),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("नमस्ते किसान 👋🏾",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            Text(
+              "नमस्ते किसान 👋🏾",
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium
+                  ?.copyWith(color: Colors.white),
+            ),
+            Text(
+              "Enjoy our services",
+              style: Theme.of(context)
+                  .textTheme
+                  .bodySmall
+                  ?.copyWith(color: Colors.white70),
+            )
           ],
         ),
         actions: [
@@ -90,9 +99,8 @@ class _HomePageState extends State<HomePage> {
             activeIcon: Icon(IconlyBold.home),
           ),
           BottomNavigationBarItem(
-            icon: Icon(IconlyLight.buy),
+            icon: Text("🛒", style: TextStyle(fontSize: 24)),
             label: "Cart",
-            activeIcon: Icon(IconlyBold.buy),
           ),
           BottomNavigationBarItem(
             icon: Icon(IconlyLight.profile),
