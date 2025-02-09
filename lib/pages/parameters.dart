@@ -55,7 +55,7 @@ class _ParametersState extends State<Parameters> {
   Future<void> fetchParametersWithTimeout() async {
     // Hardcoded values for all parameters
     final hardcodedValues = [
-      {'heading': parameter1Name, 'description': '34.3'},
+      {'heading': parameter1Name, 'description': '11.3'},
       {'heading': parameter2Name, 'description': '75.654'},
       {'heading': parameter3Name, 'description': '309.0 '},
       {'heading': parameter4Name, 'description': '6.543'},

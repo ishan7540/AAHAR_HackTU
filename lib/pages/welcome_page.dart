@@ -59,7 +59,7 @@ class _WelcomeState extends State<Welcome> {
                 height: 106,
                 width: 195,
                 child: Image.asset(
-                  'lib/images/aahar_line.png',
+                  'lib/images/aahar-line.png',
                   fit: BoxFit.contain,
                 )),
           ),
